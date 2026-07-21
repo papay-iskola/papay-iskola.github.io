@@ -17,9 +17,6 @@ contact:
     - icon : "fa fa-phone fa-fw" # themify icon pack : https://themify.me/themify-icons
       info : "Telefon: +36 22 460 003"
       
-    - icon : "fa fa-mobile-retro fa-fw" # themify icon pack : https://themify.me/themify-icons
-      info : "Mobil telefon: +36 20 620 0526"
-      
     - icon : "fa fa-envelope fa-fw" # themify icon pack : https://themify.me/themify-icons
       info : "Email: titkarsag.papay@gmail.com"
 
