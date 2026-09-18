@@ -1,0 +1,38 @@
+name: Build production package
+
+on:
+  # Runs on release tags, e.g. 1.*, 2023-11-20
+  push:
+    tags:
+      - "*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.125.4
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Build with Hugo
+        run: |
+          hugo -b https://mvdiakotthon.edu.hu/
+      - name: Upload downloadable site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-package
+          path: public
+          retention-days: 30
