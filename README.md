@@ -143,11 +143,9 @@ A deployment automatikusan történik a github-ra történő push, vagy a github
 
 ## production környezet
 
-Honlap generálás:
+Actions -> Csomagold be az ÉLES oldalt -> Run workflow -> Run workflow
 
-```
-hugo -b https://mvdiakotthon.edu.hu/
-```
+Ha lefutott, akkor bemész ennek a workflow lefutásnak az oldalára, annak az alján: Artifacts és letöltöd a production-package állományt. Ez egy zip, amit ki kell csomagolni és a fileZillával a tartalmát feltölteni a www könyvtár alá.
 
 Feltöltés: FileZilla
 
