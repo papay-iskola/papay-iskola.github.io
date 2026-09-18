@@ -1,5 +1,4 @@
-name: Build production package
-
+name: Csomagold be az ÉLES oldalt
 on:
   # Runs on release tags, e.g. 1.*, 2023-11-20
   push:
